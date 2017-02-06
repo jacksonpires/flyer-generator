@@ -1,0 +1,54 @@
+<% if flyer.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+    <ul>
+        <% flyer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+
+    </div>
+<% end %>
+
+<%= form_for(flyer) do |f| %>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :event_date %>
+        <%= f.date_select :event_date %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :event_time %>
+        <%= f.time_select :event_time, {minute_step: 30} %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :address1 %>
+        <%= f.text_field :address1, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :address2 %>
+        <%= f.text_field :address2, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  
+  <%= submit_tag "Criar", class: "btn btn-default"  %>
+<% end %>
+

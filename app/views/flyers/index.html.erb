@@ -1,0 +1,41 @@
+<h1 class="page-header">Convites SCI</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      Listando Convites
+      <%= link_to new_flyer_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
+          <i class="fa fa-plus"></i>
+      <% end %>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover datatable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Endereço</th>
+                    <th>Complemento</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @flyers.each do |flyer| %>
+                <tr>
+                  <td><%= flyer.id %></td>
+                  <td><%= l flyer.event_date %></td>
+                  <td><%= flyer.event_time.strftime("%H:%M") %></td>
+                  <td><%= flyer.address1 %></td>
+                  <td><%= flyer.address2 %></td>
+                  <td>
+                    <%= link_to 'Mostrar', flyer %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+</div>

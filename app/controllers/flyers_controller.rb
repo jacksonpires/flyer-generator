@@ -10,6 +10,7 @@ class FlyersController < ApplicationController
   # GET /flyers/1
   # GET /flyers/1.json
   def show
+    @flyer.generate_sci_flyer
   end
 
   # GET /flyers/new

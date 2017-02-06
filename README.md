@@ -1,7 +1,7 @@
 # Gerador de Convites da SCI
 
-´´´ruby
+```ruby
 bundle
 rail s
-´´´
+```
 
